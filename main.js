@@ -24,8 +24,9 @@ document.body.innerText = 'Sua idade é: ' + (idade ?? 'Nao informado');
 // Armezena dados entre chaves.
 const user = {
  name: 'Canedo',
+ nickname: 'Rafa',
  idade: 27,
- adress: {
+ address: {
   street: 'Rua Test',
   number: 303,
  },
@@ -35,3 +36,33 @@ const user = {
 
 // Método 1
 document.body.innerText = ('name' in user)
+
+// Método 2
+// Formado JSON, valores do object
+document.body.innerText = JSON.stringify(Object.values(user))
+
+// Valores objetc via Const
+const address = user.address
+docoument.body.innerText = JSON.stringify(address)
+
+// Destruturacao via Const
+const { address, idade } = user
+document.body.innerText = JSON.stringify({ address, idade })
+
+// Type Object
+const { address, idade: age } = user
+document.body.innerText = JSON.stringify({ address, age })
+
+// Object via Function
+function mostraIdade(user) {
+return user.idade;
+}
+
+document.body.innerText = mostraIdade(user)
+
+// Destruturacao via Function
+function mostraIdade({ idade }) {
+    return idade;
+    }
+    
+document.body.innerText = mostraIdade(user)
