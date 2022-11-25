@@ -45,7 +45,7 @@ document.body.innerText = JSON.stringify(Object.values(user))
 const address = user.address
 docoument.body.innerText = JSON.stringify(address)
 
-// Destruturacao via Const
+// Desestruturacao via Const
 const { address, idade } = user
 document.body.innerText = JSON.stringify({ address, idade })
 
@@ -60,7 +60,7 @@ return user.idade;
 
 document.body.innerText = mostraIdade(user)
 
-// Destruturacao via Function
+// Desestruturacao via Function
 function mostraIdade({ idade }) {
     return idade;
     }
